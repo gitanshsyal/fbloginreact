@@ -1,0 +1,40 @@
+first install this dependency
+npm install react-native-fbsdk --save
+if version of project is below 0.59 then add
+react-native link react-native-fbsdk
+for android:
+ Add the Maven Central Repository to build.gradle before dependencies:
+repositories {
+        mavenCentral()
+    }
+Add compile 'com.facebook.android:facebook-android-sdk:[4,5)' to your build.gradle dependencies
+ Build your project.
+ Import Facebook SDK into your app:
+import com.facebook.FacebookSdk;
+Add Facebook App ID:
+Open your strings.xml file, for example: /app/src/main/res/values/strings.xml.
+ Add a new string with the name facebook_app_id containing the value of your Facebook App ID:
+<string name="facebook_app_id">357672281853652</string>
+Open AndroidManifest.xml.
+Add a uses-permission element to the manifest:
+<uses-permission android:name="android.permission.INTERNET"/>
+ Add a meta-data element to the application element:
+<application android:label="@string/app_name" ...>
+    ...
+    <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/facebook_app_id"/>
+    ...
+</application>
+Tell us about your Android project
+Package Name
+Your package name uniquely identifies your Android app. We use this to let people download your app from Google Play if they don't have it installed. You can find this in your Android Manifest
+com.fblogin
+Default Activity Class Name
+This is the fully qualified class name of the activity that handles deep linking. We use this when we deep link into your app from the Facebook app. You can also find this in your Android Manifest
+com.fblogin.MainActivity
+Add your development and release key hashes
+follow these steps:
+https://reactnativecode.com/generate-release-key-hash-in-windows/
+get the app id and paste it in string
+
+for making live select status on facebook console and fill privacy policy inside it
+https://www.freeprivacypolicy.com/?sscid=91k3_cgje5&
